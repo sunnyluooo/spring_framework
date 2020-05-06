@@ -17,9 +17,7 @@
 
     <modules>
         <module>eureka</module>
-        <module>eureka2</module>
         <module>admin</module>
-        <module>common</module>
     </modules>
 
 
