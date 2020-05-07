@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description TODO
  * @createTime 2020-05-07
  */
-@RequestMapping("/hello")
+@RequestMapping("/api")
 @RestController
-public class HelloController {
+public class ApiController {
 
-    @GetMapping("")
+    @GetMapping("hello")
     public String hello(){
         return "hello world";
     }
