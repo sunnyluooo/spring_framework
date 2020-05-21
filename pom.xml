@@ -15,19 +15,30 @@
         <version>2.2.6.RELEASE</version>
     </parent>
 
+    <properties>
+        <hutool.version>5.3.1</hutool.version>
+        <platform.common.version>1.0-SNAPSHOT</platform.common.version>
+        <spring.cloud.version>Hoxton.SR4</spring.cloud.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.platform</groupId>
+                <artifactId>common</artifactId>
+                <version>${platform.common.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR4</version>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>5.3.1</version>
+                <version>${hutool.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
