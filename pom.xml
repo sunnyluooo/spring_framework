@@ -45,7 +45,7 @@
 
     <modules>
         <module>eureka</module>
-        <module>admin</module>
+        <module>single-demo</module>
         <module>common</module>
         <module>config</module>
         <module>api</module>

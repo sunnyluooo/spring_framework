@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/api/admin-api/admin-api.iml" filepath="$PROJECT_DIR$/api/admin-api/admin-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/admin-service/admin-service.iml" filepath="$PROJECT_DIR$/service/admin-service/admin-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
@@ -11,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform.iml" filepath="$PROJECT_DIR$/platform.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/single-demo/single-demo.iml" filepath="$PROJECT_DIR$/single-demo/single-demo.iml" />
     </modules>
   </component>
 </project>
