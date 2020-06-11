@@ -50,5 +50,8 @@
         <module>config</module>
         <module>api</module>
         <module>service</module>
+        <module>admin/admin-service</module>
+        <module>core</module>
+        <module>common/core</module>
     </modules>
 </project>

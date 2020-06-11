@@ -12,21 +12,20 @@ platform-cloud
 |
 ├──common --通用包
 |  |
-|  ├──xxx --xx
+|  ├──core --核心包
 |
 ├──config --cloud统一配置中心
 |
 ├──eureka --注册中心
 |
-├──ruoyi-gateway --网关
+├──gateway --网关
 |
-├──api --服务api模块
+├──admin --admin服务模块
 |  |
 |  ├──admin-api --系统业务api
-|
-├──service --微服务
 |  |
-|  ├──admin-service --系统业务
+|  ├──admin-service --系统业务service
+|
 
 
 ```

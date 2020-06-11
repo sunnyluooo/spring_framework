@@ -17,5 +17,8 @@
         </dependency>
     </dependencies>
 
+    <modules>
+        <module>core</module>
+    </modules>
 
 </project>
