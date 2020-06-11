@@ -11,5 +11,8 @@
 
     <artifactId>service</artifactId>
 
+    <modules>
+        <module>admin-service</module>
+    </modules>
 
 </project>

@@ -11,5 +11,7 @@
 
     <artifactId>api</artifactId>
 
-
+    <modules>
+        <module>admin-api</module>
+    </modules>
 </project>
