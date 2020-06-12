@@ -10,6 +10,7 @@
       <set>
         <option value="$PROJECT_DIR$/admin-api/pom.xml" />
         <option value="$PROJECT_DIR$/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/common/core/pom.xml" />
         <option value="$PROJECT_DIR$/service/admin-service/pom.xml" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
       </set>
