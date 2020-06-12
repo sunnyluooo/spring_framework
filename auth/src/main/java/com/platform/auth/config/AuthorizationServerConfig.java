@@ -8,6 +8,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 /**
@@ -18,9 +19,6 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-
-
-
     @Autowired
     AuthenticationManager authenticationManager;
     @Autowired
@@ -29,17 +27,24 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient("client_1")
-                .resourceIds("AdminResourceId")
+                .resourceIds("*")
                 .authorizedGrantTypes("password","refresh_token")
-                .scopes("select")
+                .scopes("query")
                 .authorities("client")
                 .secret("123456");
     }
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints.tokenStore(new RedisTokenStore(redisConnectionFactory))
                 .authenticationManager(authenticationManager);
 
+    }
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        // 允许表单认证
+        security.allowFormAuthenticationForClients();
+        security.checkTokenAccess("isAuthenticated()");
     }
 }
