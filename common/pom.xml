@@ -10,13 +10,6 @@
     </parent>
     <artifactId>common</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
-    </dependencies>
-
     <modules>
         <module>core</module>
     </modules>

@@ -1,6 +1,5 @@
 #未命名
 
-### 技术栈 
 * **eureka** *2.2.2.RELEASE*
 * **spring cloud config** *2.2.2.RELEASE*
 * **spring boot**  *2.2.6.RELEASE*
@@ -26,6 +25,5 @@ platform-cloud
 |  |
 |  ├──admin-service --系统业务service
 |
-
 
 ```
