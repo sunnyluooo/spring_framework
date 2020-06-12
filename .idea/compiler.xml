@@ -12,7 +12,6 @@
         <module name="auth" />
         <module name="eureka" />
         <module name="admin-service" />
-        <module name="admin" />
         <module name="config" />
         <module name="single-demo" />
       </profile>

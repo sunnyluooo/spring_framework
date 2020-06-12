@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/common/core/common/core.iml" filepath="$PROJECT_DIR$/common/core/common/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform.iml" filepath="$PROJECT_DIR$/platform.iml" />
-      <module fileurl="file://$PROJECT_DIR$/admin/admin.iml" filepath="$PROJECT_DIR$/admin/admin.iml" />
     </modules>
   </component>
 </project>

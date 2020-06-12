@@ -3,7 +3,3 @@ eureka:
     registry-fetch-interval-seconds: 5
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-
-
-test: 123456
