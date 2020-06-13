@@ -5,3 +5,7 @@ spring:
     name: auth
   profiles:
     active: dev
+
+logging:
+  level:
+    org.springframework: DEBUG
