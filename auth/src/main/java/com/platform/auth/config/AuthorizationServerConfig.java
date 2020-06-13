@@ -48,3 +48,5 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         security.checkTokenAccess("isAuthenticated()");
     }
 }
+
+
