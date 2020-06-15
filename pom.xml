@@ -25,7 +25,12 @@
         <dependencies>
             <dependency>
                 <groupId>com.platform</groupId>
-                <artifactId>common</artifactId>
+                <artifactId>common-core</artifactId>
+                <version>${platform.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.platform</groupId>
+                <artifactId>common-auth</artifactId>
                 <version>${platform.common.version}</version>
             </dependency>
             <dependency>

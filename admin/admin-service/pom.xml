@@ -16,9 +16,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- platform auth -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <groupId>com.platform</groupId>
+            <artifactId>common-auth</artifactId>
+        </dependency>
+        <!-- platform core -->
+        <dependency>
+            <groupId>com.platform</groupId>
+            <artifactId>common-core</artifactId>
         </dependency>
     </dependencies>
 

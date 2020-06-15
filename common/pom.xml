@@ -12,7 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>core</module>
+        <module>common-core</module>
+        <module>common-auth</module>
     </modules>
 
 </project>
