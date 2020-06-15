@@ -12,10 +12,6 @@
     <artifactId>admin-service</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!-- platform auth -->
         <dependency>
             <groupId>com.platform</groupId>
