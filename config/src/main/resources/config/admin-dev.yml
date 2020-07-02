@@ -7,7 +7,7 @@ eureka:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:9001/users/infod
+      user-info-uri: http://localhost:9001/user/info
     client:
       id: client
       client-secret: client
