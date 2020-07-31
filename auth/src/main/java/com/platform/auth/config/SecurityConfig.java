@@ -7,13 +7,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 /**
  * @author: 吴邪
  * @date: 2020/6/12 19:22
  */
-@EnableResourceServer
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
