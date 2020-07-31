@@ -25,6 +25,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and().requestMatchers().anyRequest()
                 .and().anonymous()
                 .and().authorizeRequests()
-                .antMatchers("/**").authenticated();  //配置访问权限控制，必须认证过后才可以访问
+                .antMatchers("/**/api/**").authenticated();  //配置访问权限控制，必须认证过后才可以访问
     }
 }

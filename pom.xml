@@ -19,6 +19,7 @@
         <hutool.version>5.3.1</hutool.version>
         <platform.common.version>1.0-SNAPSHOT</platform.common.version>
         <spring.cloud.version>Hoxton.SR4</spring.cloud.version>
+        <knife4j.version>2.0.2</knife4j.version>
     </properties>
 
     <dependencyManagement>
@@ -40,10 +41,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- hutool -->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
