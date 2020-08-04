@@ -13,10 +13,10 @@
 
     <dependencies>
         <!-- platform auth -->
-        <dependency>
-            <groupId>com.platform</groupId>
-            <artifactId>common-auth</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.platform</groupId>-->
+<!--            <artifactId>common-auth</artifactId>-->
+<!--        </dependency>-->
         <!-- platform core -->
         <dependency>
             <groupId>com.platform</groupId>

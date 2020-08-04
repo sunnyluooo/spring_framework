@@ -1,4 +1,8 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:9000
+      name: ${spring.application.name}
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: ruoyi-config

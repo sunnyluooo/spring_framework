@@ -5,3 +5,11 @@ spring:
     name: gateway
   profiles:
     active: dev
+  cloud:
+    gateway:
+      routes:
+       - id: admin
+         uri: lb://admin
+         predicates:
+           - Path=/admin/**
+
