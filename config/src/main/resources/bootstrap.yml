@@ -1,8 +1,12 @@
 server:
   port: 9000
-
 spring:
   application:
     name: config
   profiles:
     active: native,dev
+
+eureka:
+  instance:
+    instance-id:  ${spring.application.name}:${server.port}
+    prefer-ip-address: true     #访问路径可以显示IP地址

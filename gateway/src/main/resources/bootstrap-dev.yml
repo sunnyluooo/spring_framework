@@ -5,4 +5,4 @@ spring:
       profile: ${spring.profiles.active}
       discovery:
         enabled: true
-        service-id: ruoyi-config
+        service-id: config
