@@ -7,6 +7,10 @@ spring:
     active: dev
   cloud:
     gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
       routes:
        - id: admin
          uri: lb://admin
