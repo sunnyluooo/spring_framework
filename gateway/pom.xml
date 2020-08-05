@@ -17,6 +17,10 @@
             <groupId>com.platform</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.platform</groupId>
+            <artifactId>common-auth</artifactId>
+        </dependency>
         <!-- gateway -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
