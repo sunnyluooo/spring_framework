@@ -1,6 +1,6 @@
 package com.platform.common.core.base;
 
-import com.platform.common.core.enums.HttpStatusEnum;
+import com.platform.common.core.enums.HttpEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -12,37 +12,39 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class R<T>{
-
-    private int errorCode;
-    private String errorMsg;
+    private String code;
+    private String msg;
     private T data;
 
     public static R success(){
-        return new R(HttpStatusEnum.SUCCESS,null);
+        return new R(HttpEnum.SUCCESS,null);
     }
 
-    public static R fail(HttpStatusEnum HttpStatusEnum){
-        return new R(HttpStatusEnum,null);
+    public static R fail(HttpEnum HttpEnum){
+        return new R(HttpEnum,null);
     }
 
     public static R fail(String errorMsg){
-        return new R(999,errorMsg,null);
+        return new R(HttpEnum.INTERNAL,errorMsg,null);
     }
 
     public static R exception(){
-        return new R(HttpStatusEnum.EXCEPTION,null);
+        return new R(HttpEnum.INTERNAL,null);
     }
 
     public static<T> R success(T data){
-        return new R(HttpStatusEnum.SUCCESS,data);
+        return new R(HttpEnum.SUCCESS,data);
     }
 
-    public R(HttpStatusEnum HttpStatusEnum,T data){
-        this.errorCode = HttpStatusEnum.code;
-        this.errorMsg = HttpStatusEnum.msg;
+    public R(HttpEnum HttpEnum, T data){
+        this.code = HttpEnum.getCode();
+        this.msg = HttpEnum.getMsg();
         this.data = data;
     }
 
-
-
+    public R(HttpEnum HttpEnum, String errorMsg, T data){
+        this.code = HttpEnum.getCode();
+        this.msg = errorMsg;
+        this.data = data;
+    }
 }
