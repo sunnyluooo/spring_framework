@@ -12,14 +12,18 @@ spring:
           lowerCaseServiceId: true
           enabled: true
       routes:
-       - id: admin
-         uri: lb://admin
-         predicates:
-           - Path=/admin/**
-       - id: auth
-           uri: lb://auth
-           predicates:
-             - Path=/auth/**
+        - id: admin # admin服务
+          uri: lb://admin
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix=1
+        - id: auth # auth服务
+          uri: lb://auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   instance:
