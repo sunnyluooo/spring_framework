@@ -7,9 +7,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.AuthenticationWebFilter;
 
 /**
  * @author: 吴邪
@@ -17,12 +19,15 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
  */
 @Configuration
 @EnableWebFluxSecurity
-public class ResourceServerConfig {
+public class SecurityConfig  {
 
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
+
+    /** 认证管理器 */
     @Autowired
     DefaultAuthenticationManager authenticationManager;
+    /** 授权管理器 */
     @Autowired
     DefaultAuthorizationManager authorizationManager;
 
@@ -33,7 +38,12 @@ public class ResourceServerConfig {
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http){
+        AuthenticationWebFilter authenticationWebFilter = new AuthenticationWebFilter(authenticationManager);
+//        authenticationWebFilter.setServerAuthenticationConverter(new ServerBearerTokenAuthenticationConverter());
 
-        return null;
+        return http.authorizeExchange()
+                .pathMatchers().permitAll() // 路径白名单
+                .anyExchange().access(authorizationManager)
+                .and().addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION).build();
     }
 }
