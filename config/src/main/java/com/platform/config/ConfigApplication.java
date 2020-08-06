@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/6/10 14:32
  */
 @EnableDiscoveryClient

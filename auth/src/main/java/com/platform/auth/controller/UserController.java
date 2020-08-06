@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/6/27 17:54
  */
 @RestController

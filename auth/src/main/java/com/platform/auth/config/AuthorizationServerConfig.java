@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/6/12 14:31
  */
 @Configuration

@@ -16,7 +16,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.AuthenticationWebFilter;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/7/31 20:26
  */
 @Configuration

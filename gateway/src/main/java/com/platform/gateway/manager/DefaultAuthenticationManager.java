@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 /**
- * @author: 吴邪
- * @date: 2020/8/5 16:11
+ * @author trayvonn
+ * @date 2020/8/5 16:11
  */
 @Component
 public class DefaultAuthenticationManager implements ReactiveAuthenticationManager {

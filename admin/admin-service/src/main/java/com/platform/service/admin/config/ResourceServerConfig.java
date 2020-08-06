@@ -1,7 +1,7 @@
 package com.platform.service.admin.config;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/6/12 23:15
  */
 //@Configuration

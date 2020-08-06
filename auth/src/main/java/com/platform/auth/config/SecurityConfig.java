@@ -9,7 +9,7 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/6/12 19:22
  */
 @EnableWebSecurity

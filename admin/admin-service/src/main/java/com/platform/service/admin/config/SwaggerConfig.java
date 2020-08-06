@@ -7,7 +7,7 @@ import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author: 吴邪
+ * @author: trayvonn
  * @date: 2020/5/13 17:52
  */
 @Configuration
