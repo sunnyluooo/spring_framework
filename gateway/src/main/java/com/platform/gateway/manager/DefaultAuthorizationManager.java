@@ -17,27 +17,38 @@ import java.util.Set;
  * @date: 2020/8/5 17:48
  */
 @Component
-public class AuthorizationManager implements ReactiveAuthorizationManager<AuthorizationContext> {
+public class DefaultAuthorizationManager implements ReactiveAuthorizationManager<AuthorizationContext> {
 
-    private Set<String> permitAll = new ConcurrentHashSet<>();
+    private final Set<String> permitAll = new ConcurrentHashSet<>();
     private static final AntPathMatcher antPathMatcher = new AntPathMatcher();
 
-    public AuthorizationManager (){
-
+    public DefaultAuthorizationManager (){
+        // permitAll url
+        permitAll.add("");
     }
 
     @Override
     public Mono<AuthorizationDecision> check(Mono<Authentication> authentication, AuthorizationContext authorizationContext) {
         ServerWebExchange exchange = authorizationContext.getExchange();
         String requestPath = exchange.getRequest().getURI().getPath();
+        // 资源放行
         if(permitAll(requestPath)){
             return Mono.just(new AuthorizationDecision(true));
         }
-        return null;
+        return authentication.map(auth-> new AuthorizationDecision(checkAuthorities(exchange,auth,requestPath))).defaultIfEmpty(new AuthorizationDecision(false));
     }
 
     private boolean permitAll(String requestPath) {
         return permitAll.stream()
                 .anyMatch(r -> antPathMatcher.match(r, requestPath));
+    }
+
+    @Override
+    public Mono<Void> verify(Mono<Authentication> authentication, AuthorizationContext object) {
+        return null;
+    }
+
+    private boolean checkAuthorities(ServerWebExchange exchange,Authentication auth,String requestPath){
+        return true;
     }
 }
