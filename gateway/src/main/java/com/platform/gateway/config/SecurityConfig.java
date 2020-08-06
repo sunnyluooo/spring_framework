@@ -10,7 +10,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import org.springframework.security.oauth2.server.resource.web.server.ServerBearerTokenAuthenticationConverter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
@@ -21,7 +20,6 @@ import org.springframework.security.web.server.authentication.AuthenticationWebF
  * @date: 2020/7/31 20:26
  */
 @Configuration
-@EnableResourceServer
 @EnableWebFluxSecurity
 public class SecurityConfig  {
 
@@ -48,7 +46,7 @@ public class SecurityConfig  {
         return http.csrf().disable()
                 .httpBasic().disable()
                 .authorizeExchange()
-                .pathMatchers(HttpMethod.OPTIONS,"/oauth/**").permitAll() // 路径白名单
+                .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyExchange().access(authorizationManager)
                 .and().addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION).build();
     }
