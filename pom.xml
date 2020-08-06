@@ -20,6 +20,7 @@
         <platform.common.version>1.0-SNAPSHOT</platform.common.version>
         <spring.cloud.version>Hoxton.SR4</spring.cloud.version>
         <knife4j.version>2.0.2</knife4j.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +53,23 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
+            </dependency>
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- aop -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>

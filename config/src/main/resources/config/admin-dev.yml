@@ -3,14 +3,3 @@ eureka:
     registry-fetch-interval-seconds: 5
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:9001/user/info
-    client:
-      id: client
-      client-secret: client
-      access-token-uri: http://localhost:9001/oauth/token
-      grant-type: password
-      scope: all
