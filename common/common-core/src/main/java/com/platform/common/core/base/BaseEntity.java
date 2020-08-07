@@ -44,8 +44,8 @@ public class BaseEntity implements Serializable {
     private Date updateTime;
 
     /**
-     * 是否有效 0否1是
+     * 删除标识 0否1是
      */
-    @TableField("is_valid")
-    private Integer isValid;
+    @TableField("del_flag")
+    private Integer delFlag;
 }
