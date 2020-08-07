@@ -16,11 +16,7 @@
             <groupId>com.platform</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
-        <!-- spring mvc -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

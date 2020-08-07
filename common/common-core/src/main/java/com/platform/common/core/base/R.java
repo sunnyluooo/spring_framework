@@ -10,7 +10,6 @@ import lombok.Data;
  * @date: 2020/5/13 15:17
  */
 @Data
-@AllArgsConstructor
 public class R<T>{
     private String code;
     private String msg;
@@ -20,12 +19,20 @@ public class R<T>{
         return new R(HttpEnum.SUCCESS,null);
     }
 
-    public static R fail(HttpEnum HttpEnum){
-        return new R(HttpEnum,null);
+    public static R fail(HttpEnum status){
+        return new R(status,null);
     }
 
-    public static R fail(String errorMsg){
-        return new R(HttpEnum.INTERNAL,errorMsg,null);
+    public static R fail(HttpEnum status,String msg){
+        return new R(status,msg,null);
+    }
+
+    public static R fail(String code,String msg){
+        return new R(code,msg,null);
+    }
+
+    public static R fail(String msg){
+        return new R(HttpEnum.INTERNAL,msg,null);
     }
 
     public static R exception(){
@@ -42,9 +49,15 @@ public class R<T>{
         this.data = data;
     }
 
-    public R(HttpEnum HttpEnum, String errorMsg, T data){
+    public R(HttpEnum HttpEnum, String msg, T data){
         this.code = HttpEnum.getCode();
-        this.msg = errorMsg;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    public R(String code, String msg, T data){
+        this.code = code;
+        this.msg = msg;
         this.data = data;
     }
 }

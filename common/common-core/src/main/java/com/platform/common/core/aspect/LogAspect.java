@@ -2,6 +2,7 @@ package com.platform.common.core.aspect;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.StopWatch;
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.platform.common.core.aop.RequestLogIgnore;
@@ -13,7 +14,11 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 /**
@@ -25,6 +30,8 @@ import java.util.*;
 @Slf4j
 @Component
 public class LogAspect {
+
+    public static final String REQUEST_ID_NAME = "_Request_id";
 
     @Pointcut("execution(* com.platform.*.*.controller.*.*(..))")
     public void pointCut(){}
@@ -44,9 +51,11 @@ public class LogAspect {
         String className = Convert.toStr(pointCutInfo.get("className"));
         String methodName = Convert.toStr(pointCutInfo.get("methodName"));
 
+        String requestId = getRequestId();
+
         Map<Class<?>, Object> args = (Map<Class<?>, Object>) pointCutInfo.get("args");
-        log.info("执行开始()->{}.{}({})", className, methodName, getArgsToString(args));
-        StopWatch stopWatch = new StopWatch(StrUtil.concat(true,className,".",methodName));
+        log.info("执行开始({})->{}.{}({})",requestId, className, methodName, getArgsToString(args));
+        StopWatch stopWatch = new StopWatch(StrUtil.concat(true,className,"#",methodName));
         stopWatch.start();
         Object result = proceedingJoinPoint.proceed();
         stopWatch.stop();
@@ -123,5 +132,28 @@ public class LogAspect {
         }
 
         return sb.toString();
+    }
+
+    private static String getRequestId() {
+        HttpServletRequest httpRequest;
+        if ((httpRequest = getHttpRequest()) != null) {
+            Object requestId = httpRequest.getAttribute(REQUEST_ID_NAME);
+            if (requestId == null) {
+                requestId = RandomUtil.randomString(8);
+                httpRequest.setAttribute(REQUEST_ID_NAME, requestId);
+            }
+            return (String) requestId;
+        }
+        return null;
+    }
+
+    private static HttpServletRequest getHttpRequest() {
+        RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request;
+        if (requestAttributes != null) {
+            request = ((ServletRequestAttributes) requestAttributes).getRequest();
+            return request;
+        }
+        return null;
     }
 }
