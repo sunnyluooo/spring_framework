@@ -1,4 +1,4 @@
-package com.platform.service.admin.constant;
+package com.platform.common.core.constant;
 
 /**
  * 公共常量表

@@ -44,7 +44,7 @@ public class RestResultHandler implements ResponseBodyAdvice<Object> {
 
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter methodParameter, MediaType mediaType, Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
-        // 接口返回的是RestResult响应格式不用处理直接返回出去
+        // 接口返回的是R响应格式不用处理直接返回出去
         if (body instanceof R) {
             return body;
         }
