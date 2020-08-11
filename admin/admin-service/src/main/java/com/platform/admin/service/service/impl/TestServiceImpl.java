@@ -1,6 +1,6 @@
-package com.platform.service.admin.service.impl;
+package com.platform.admin.service.service.impl;
 
-import com.platform.service.admin.service.TestService;
+import com.platform.admin.service.service.TestService;
 
 /**
  * @author 吴邪

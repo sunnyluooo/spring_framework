@@ -1,4 +1,4 @@
-package com.platform.service.admin.service;
+package com.platform.admin.service.service;
 
 /**
  * @author 吴邪

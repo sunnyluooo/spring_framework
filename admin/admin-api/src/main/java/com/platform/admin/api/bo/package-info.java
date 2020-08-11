@@ -3,4 +3,4 @@
  * @author 吴邪
  * @date 2020/8/7 14:54
  */
-package com.platform.api.admin.bo;
+package com.platform.admin.api.bo;

@@ -1,4 +1,4 @@
-package com.platform.service.admin.mapper;
+package com.platform.admin.service.mapper;
 
 /**
  * @author 吴邪

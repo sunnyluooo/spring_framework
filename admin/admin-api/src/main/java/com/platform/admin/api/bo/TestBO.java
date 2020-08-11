@@ -1,4 +1,4 @@
-package com.platform.api.admin.bo;
+package com.platform.admin.api.bo;
 
 /**
  * @author 吴邪

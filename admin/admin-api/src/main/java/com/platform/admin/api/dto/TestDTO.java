@@ -1,4 +1,4 @@
-package com.platform.api.admin.dto;
+package com.platform.admin.api.dto;
 
 /**
  * @author 吴邪

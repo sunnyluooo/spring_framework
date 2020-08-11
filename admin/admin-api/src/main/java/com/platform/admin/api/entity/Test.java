@@ -1,4 +1,4 @@
-package com.platform.api.admin.entity;
+package com.platform.admin.api.entity;
 
 /**
  * @author: 吴邪

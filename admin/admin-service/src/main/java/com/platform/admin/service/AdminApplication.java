@@ -1,4 +1,4 @@
-package com.platform.service.admin;
+package com.platform.admin.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

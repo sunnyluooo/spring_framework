@@ -1,4 +1,4 @@
-package com.platform.service.admin.config;
+package com.platform.admin.service.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Configuration;

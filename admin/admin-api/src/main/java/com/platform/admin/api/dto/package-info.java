@@ -3,4 +3,4 @@
  * @author 吴邪
  * @date 2020/8/7 14:53
  */
-package com.platform.api.admin.dto;
+package com.platform.admin.api.dto;

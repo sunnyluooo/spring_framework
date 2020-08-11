@@ -1,4 +1,4 @@
-package com.platform.api.admin.vo;
+package com.platform.admin.api.vo;
 
 /**
  * @author: 吴邪
