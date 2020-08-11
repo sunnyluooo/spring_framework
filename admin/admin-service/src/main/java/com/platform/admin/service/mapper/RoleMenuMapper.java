@@ -3,6 +3,7 @@ package com.platform.admin.service.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.platform.admin.api.entity.RoleMenu;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -12,6 +13,7 @@ import com.platform.admin.api.entity.RoleMenu;
  * @author admin
  * @since 2020-08-11
  */
+@Repository
 public interface RoleMenuMapper extends BaseMapper<RoleMenu> {
 
 }

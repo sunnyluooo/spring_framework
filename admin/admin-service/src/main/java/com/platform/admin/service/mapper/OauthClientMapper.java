@@ -3,6 +3,7 @@ package com.platform.admin.service.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.platform.admin.api.entity.OauthClient;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -12,6 +13,7 @@ import com.platform.admin.api.entity.OauthClient;
  * @author admin
  * @since 2020-08-11
  */
+@Repository
 public interface OauthClientMapper extends BaseMapper<OauthClient> {
 
 }
