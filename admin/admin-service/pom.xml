@@ -12,15 +12,22 @@
     <artifactId>admin-service</artifactId>
 
     <dependencies>
+        <!-- common-core -->
         <dependency>
             <groupId>com.platform</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
+        <!-- admin-api -->
         <dependency>
             <groupId>com.platform</groupId>
             <artifactId>admin-api</artifactId>
         </dependency>
-
+        <!-- spring test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>
