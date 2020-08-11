@@ -16,6 +16,10 @@
             <groupId>com.platform</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.platform</groupId>
+            <artifactId>admin-api</artifactId>
+        </dependency>
 
     </dependencies>
 

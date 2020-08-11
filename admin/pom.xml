@@ -15,4 +15,13 @@
         <module>admin-api</module>
         <module>admin-service</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.platform</groupId>
+                <artifactId>admin-api</artifactId>
+                <version>${parent.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

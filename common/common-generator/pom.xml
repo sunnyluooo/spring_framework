@@ -12,25 +12,15 @@
     <artifactId>common-generator</artifactId>
 
     <dependencies>
+        <!-- common-core -->
+        <dependency>
+            <groupId>com.platform</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
         <!-- mybatis-plus-generator -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-        </dependency>
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <!-- mybatis-plus -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-        <!-- mysql-connector-java -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!-- velocity-engine-core -->
         <dependency>

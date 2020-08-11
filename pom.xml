@@ -17,7 +17,6 @@
 
     <properties>
         <hutool.version>5.3.1</hutool.version>
-        <platform.common.version>1.0-SNAPSHOT</platform.common.version>
         <spring.cloud.version>Hoxton.SR4</spring.cloud.version>
         <knife4j.version>2.0.2</knife4j.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
@@ -30,12 +29,12 @@
             <dependency>
                 <groupId>com.platform</groupId>
                 <artifactId>common-core</artifactId>
-                <version>${platform.common.version}</version>
+                <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>com.platform</groupId>
                 <artifactId>common-auth</artifactId>
-                <version>${platform.common.version}</version>
+                <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

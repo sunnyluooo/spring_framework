@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.po.LikeTable;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.platform.common.generator.base.BaseEntity;
+import com.platform.common.core.base.BaseEntity;
 import com.platform.common.generator.config.GeneratorConfig;
 
 /**
@@ -70,11 +70,11 @@ public class AutoGeneratorWrapper {
         sc.setNaming(NamingStrategy.underline_to_camel);
         sc.setSuperEntityClass(BaseEntity.class);
         sc.setTablePrefix(GeneratorConfig.tablePrefix);
-        sc.setSuperEntityColumns("create_by","create_time","update_by","update_time","del_flag");
+        sc.setSuperEntityColumns("createBy","createTime","updateBy","updateTime","delFlag");
         sc.setLikeTable(new LikeTable(GeneratorConfig.tablePrefix, SqlLike.RIGHT));
         sc.setRestControllerStyle(true);
         sc.setEntityTableFieldAnnotationEnable(true);
-        sc.setLogicDeleteFieldName("del_flag");
+        sc.setLogicDeleteFieldName("delFlag");
         mpg.setStrategy(sc);
     }
 

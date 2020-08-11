@@ -12,13 +12,10 @@
     <artifactId>admin-api</artifactId>
 
     <dependencies>
-        <!-- lombok -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>com.platform</groupId>
+            <artifactId>common-core</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
