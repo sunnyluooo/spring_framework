@@ -21,6 +21,8 @@
         <spring.cloud.version>Hoxton.SR4</spring.cloud.version>
         <knife4j.version>2.0.2</knife4j.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <mysql-connector.version>8.0.19</mysql-connector.version>
+        <velocity.version>2.2</velocity.version>
     </properties>
 
     <dependencyManagement>
@@ -60,15 +62,23 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+            <!-- mybatis-plus-generator -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+            <!-- velocity-engine-core -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
             <!-- mysql -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
                 <scope>runtime</scope>
             </dependency>
             <!-- aop -->
