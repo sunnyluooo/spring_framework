@@ -3,6 +3,7 @@ package com.platform.admin.service.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.platform.admin.api.entity.Role;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Repository;
  * @since 2020-08-11
  */
 @Repository
+@Mapper
 public interface RoleMapper extends BaseMapper<Role> {
 
 }
