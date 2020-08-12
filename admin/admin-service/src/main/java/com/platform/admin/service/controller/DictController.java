@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-08-11
  */
 @RestController
-@RequestMapping("/admin/dict")
+@RequestMapping("/dict")
 public class DictController {
 
 }
