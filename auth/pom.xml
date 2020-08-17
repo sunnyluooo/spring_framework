@@ -21,6 +21,12 @@
         <dependency>
             <groupId>com.platform</groupId>
             <artifactId>common-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.baomidou</groupId>
+                    <artifactId>mybatis-plus-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- redis -->
         <dependency>
@@ -32,6 +38,12 @@
             <groupId>com.platform</groupId>
             <artifactId>admin-api</artifactId>
             <version>${parent.version}</version>
+        </dependency>
+        <!-- spring test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
