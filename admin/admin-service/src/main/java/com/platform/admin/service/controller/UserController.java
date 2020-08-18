@@ -6,10 +6,12 @@ import com.platform.admin.api.entity.User;
 import com.platform.admin.service.service.UserService;
 import com.platform.common.core.constant.ConstantPublic;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -25,8 +27,10 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    HttpServletRequest servletRequest;
 
-    @GetMapping("byUsername")
+    @RequestMapping(value = "byUsername",method = {RequestMethod.GET, RequestMethod.POST})
     public User getByUsername(@RequestParam("username") String username){
         return userService.getOne(Wrappers.<User>lambdaQuery()
                 .eq(User::getUsername,username)
