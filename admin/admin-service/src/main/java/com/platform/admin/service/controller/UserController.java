@@ -24,7 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
     @Autowired
     UserService userService;
     @Autowired
@@ -32,9 +31,10 @@ public class UserController {
 
     @RequestMapping(value = "byUsername",method = {RequestMethod.GET, RequestMethod.POST})
     public User getByUsername(@RequestParam("username") String username){
-        return userService.getOne(Wrappers.<User>lambdaQuery()
-                .eq(User::getUsername,username)
+        User one = userService.getOne(Wrappers.<User>lambdaQuery()
+                .eq(User::getUsername, username)
                 .eq(User::getDelFlag, ConstantPublic.NO));
+        return one;
     }
 }
 

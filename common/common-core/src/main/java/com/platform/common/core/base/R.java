@@ -1,8 +1,8 @@
 package com.platform.common.core.base;
 
 import com.platform.common.core.enums.HttpEnum;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 自定义返回类
@@ -10,6 +10,7 @@ import lombok.Data;
  * @date: 2020/5/13 15:17
  */
 @Data
+@NoArgsConstructor
 public class R<T>{
     private String code;
     private String msg;
