@@ -35,11 +35,7 @@ public class RestResultHandler implements ResponseBodyAdvice<Object> {
         // 方法标注@ResponseBody注解的接口返回值需要特殊处理
         RestController restController = declaringClass.getAnnotation(RestController.class);
 
-        if (restController != null && method != null) {
-            return method.getAnnotation(ResponseBody.class) != null;
-        }
-
-        return true;
+        return restController != null || (method != null && method.getAnnotation(ResponseBody.class) != null);
     }
 
     @Override
