@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author 吴邪
  * @date 2020/8/12 14:52
  */
-@FeignClient(name = FeignClientPublic.SERVICE_ADMIN,contextId = "OauthClientFeignClient")
+@FeignClient(name = FeignClientPublic.SERVICE_ADMIN,contextId = "OauthClientFeignClient",path = FeignClientPublic.URL_ADMIN_OAUTHCLIENT)
 public interface OauthClientFeignClient {
 
     /**
@@ -18,6 +18,6 @@ public interface OauthClientFeignClient {
      * @param clientId
      * @return
      */
-    @GetMapping(FeignClientPublic.URL_ADMIN_OAUTHCLIENT+"/byClientId")
+    @GetMapping("/byClientId")
     R<OauthClient> getByClientId(String clientId);
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author 吴邪
  * @date 2020/8/12 14:52
  */
-@FeignClient(name = FeignClientPublic.SERVICE_ADMIN,contextId = "UserFeignClient")
+@FeignClient(name = FeignClientPublic.SERVICE_ADMIN,contextId = "UserFeignClient",path = FeignClientPublic.URL_ADMIN_USER)
 public interface UserFeignClient {
 
     /**
@@ -19,6 +19,6 @@ public interface UserFeignClient {
      * @param username
      * @return
      */
-    @GetMapping(FeignClientPublic.URL_ADMIN_USER+"/byUsername")
+    @GetMapping("/byUsername")
     R<User> getByUsername(@RequestParam("username") String username);
 }
