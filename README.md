@@ -27,3 +27,17 @@ platform-cloud
 |
 
 ```
+
+### 启动顺序
+1. eureka
+2. config
+3. gateway
+4. auth
+5. admin
+
+### 获取token
+```
+ Basic Auth : username: client password: client 
+ http://localhost:9002/auth/oauth/token?grant_type=password&username=admin&password=admin&scope=all
+```
+

@@ -27,6 +27,8 @@ public class ClientDetailsServiceImpl implements ClientDetailsService {
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
         R<OauthClient> byClientId = oauthClientFeignClient.getByClientId(clientId);
         OauthClient oauthClient = FeignOptional.of(byClientId).orElseThrow(() -> new ClientRegistrationException("clientId不存在"));
-        return new BaseClientDetails(oauthClient.getClientId(),null,oauthClient.getScope(),oauthClient.getAuthorizedGrantTypes(),null);
+        BaseClientDetails baseClientDetails = new BaseClientDetails(oauthClient.getClientId(), null, oauthClient.getScope(), oauthClient.getAuthorizedGrantTypes(), null);
+        baseClientDetails.setClientSecret(passwordEncoder.encode(oauthClient.getClientSecret()));
+        return baseClientDetails;
     }
 }

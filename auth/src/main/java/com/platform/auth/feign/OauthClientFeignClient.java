@@ -5,6 +5,7 @@ import com.platform.common.core.base.R;
 import com.platform.common.core.constant.FeignClientPublic;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author 吴邪
@@ -19,5 +20,5 @@ public interface OauthClientFeignClient {
      * @return
      */
     @GetMapping("/byClientId")
-    R<OauthClient> getByClientId(String clientId);
+    R<OauthClient> getByClientId(@RequestParam("clientId") String clientId);
 }
