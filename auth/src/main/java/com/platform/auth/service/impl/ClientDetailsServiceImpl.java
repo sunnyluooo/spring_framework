@@ -12,6 +12,8 @@ import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author 吴邪
  * @date 2020/8/12 14:14
@@ -19,12 +21,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClientDetailsServiceImpl implements ClientDetailsService {
     @Autowired
+    HttpServletRequest request;
+    @Autowired
     PasswordEncoder passwordEncoder;
     @Autowired
     OauthClientFeignClient oauthClientFeignClient;
 
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
+        //TODO 需要缓存结果集，因为框架会多次调用
         R<OauthClient> byClientId = oauthClientFeignClient.getByClientId(clientId);
         OauthClient oauthClient = FeignOptional.of(byClientId).orElseThrow(() -> new ClientRegistrationException("clientId不存在"));
         BaseClientDetails baseClientDetails = new BaseClientDetails(oauthClient.getClientId(), null, oauthClient.getScope(), oauthClient.getAuthorizedGrantTypes(), null);
