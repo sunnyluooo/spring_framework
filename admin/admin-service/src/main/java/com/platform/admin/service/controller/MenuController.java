@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
-
+    //TODO 获取所有树形菜单
+    //TODO 根据用户获取菜单列表
+    //TODO 新增/编辑菜单
+    //TODO 删除菜单
 }
 

@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/role")
 public class RoleController {
-
+    //TODO 获取所有角色
+    //TODO 根据角色id获取角色对应的权限
+    //TODO 新增/编辑角色
+    //TODO 删除角色
 }
 

@@ -2,7 +2,6 @@ package com.platform.admin.service.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,6 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/dict")
 public class DictController {
+    //TODO 获取所有字典
 
+    //TODO 根据字典类型获取所有字典
+
+    //TODO 根据字典类型和字典名称获取字典值
 }
 
